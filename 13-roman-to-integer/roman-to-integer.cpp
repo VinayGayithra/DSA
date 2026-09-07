@@ -11,12 +11,13 @@ public:
         mp['M']=1000;
 
         int res=0;
-        for(int i=0;i<s.size();i++){
+        for(int i=0;i<s.size()-1;i++){
             if(mp[s[i]]<mp[s[i+1]]) 
                 res-=mp[s[i]];
             else 
                 res+=mp[s[i]];
-        }  
+        }
+        res+=mp[s.back()];
         return res;
     }
 };
